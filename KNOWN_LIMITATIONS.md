@@ -10,4 +10,4 @@
 
 ## Known Issues
 
-<!-- Filled in progressively. -->
+- Products and knowledge entries created via `POST /products` / `POST /knowledge` are saved with `embedding=NULL`. They are searchable only through the FTS fallback path until the seed script is re-run, which generates embeddings in bulk.

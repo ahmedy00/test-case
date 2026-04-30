@@ -309,7 +309,8 @@ KNOWLEDGE_ENTRIES: list[KnowledgeSeed] = [
             "claim. Replacement units are shipped via overnight delivery at no charge once "
             "the damage report is approved (typically within one business day). Do not "
             "discard the original packaging until the replacement has been delivered and "
-            "inspected."
+            "inspected. If you prefer to return damaged items for credit instead of a "
+            "replacement, request an RMA number through the warranty portal."
         ),
     },
     {
