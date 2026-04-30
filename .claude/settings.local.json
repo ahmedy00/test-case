@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker --version)",
+      "Bash(docker compose *)",
+      "Bash(docker info *)",
+      "PowerShell(Test-Path *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173)",
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8000/health)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8000/docs)",
+      "Bash(echo \"=== \\\\\\\\dx ===\")",
+      "Bash(echo \"=== \\\\\\\\dt ===\")",
+      "Bash(echo \"=== \\\\\\\\d products ===\")",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(curl -s -X POST http://localhost:8000/search -H 'Content-Type: application/json' -d '{\"query\":\"laptop\"}')",
+      "Bash(curl -s -X POST http://localhost:8000/search -H 'Content-Type: application/json' -d '{\"query\":\"return policy\"}')",
+      "Bash(python -c \"import json,sys; b=json.load\\(sys.stdin\\); print\\(b['knowledge'][0]['title'] if b['knowledge'] else 'NO KNOWLEDGE'\\)\")",
+      "Bash(curl -s -X POST http://localhost:8000/search -H 'Content-Type: application/json' -d '{\"query\":\"laptop\",\"max_price\":1000}')",
+      "Bash(python -c \"import json,sys; b=json.load\\(sys.stdin\\); print\\('count:', len\\(b['products']\\)\\); [print\\(p['payload']['sku'], p['payload']['price']\\) for p in b['products']]\")",
+      "Bash(python -c \"import json,sys; b=json.load\\(sys.stdin\\); print\\('method_used:', b['method_used']\\); print\\('product count:', len\\(b['products']\\)\\); [print\\(' -', p['payload']['sku'], p['payload']['name'], '$' + str\\(p['payload']['price']\\)\\) for p in b['products']]\")",
+      "Bash(python -c \"import json,sys; b=json.load\\(sys.stdin\\); print\\('first knowledge title:', b['knowledge'][0]['title'] if b['knowledge'] else 'NONE'\\)\")",
+      "Bash(python -c \"import json,sys; b=json.load\\(sys.stdin\\); print\\('count:', len\\(b['products']\\)\\); [print\\(' -', p['payload']['sku'], '$' + str\\(p['payload']['price']\\)\\) for p in b['products']]\")"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+import logging
+
+from fastapi import APIRouter, Depends, Response, status
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.db import get_db
+
+logger = logging.getLogger(__name__)
+
+router = APIRouter()
+
+_VERSION = "0.1.0"
+
+
+@router.get("/health")
+async def health(response: Response, db: AsyncSession = Depends(get_db)) -> dict[str, str]:
+    try:
+        await db.execute(text("SELECT 1"))
+    except Exception:
+        logger.exception("Health check DB ping failed")
+        response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
+        return {"status": "degraded", "database": "error", "version": _VERSION}
+
+    return {"status": "ok", "database": "ok", "version": _VERSION}
