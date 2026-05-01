@@ -61,7 +61,8 @@
       "Bash(python -c \"import sys, json; d=json.load\\(sys.stdin\\); print\\('count=', len\\(d['products']\\)\\); print\\([p['payload']['sku']+' $'+str\\(p['payload']['price']\\) for p in d['products']]\\)\")",
       "Bash(curl -sf http://localhost:8000/health)",
       "Bash(python -c \"import sys, json; d=json.load\\(sys.stdin\\); print\\('count=', len\\(d['products']\\)\\); print\\([p['payload']['sku']+' $'+str\\(p['payload']['price']\\) for p in d['products']]\\); print\\('method=', d['method_used']\\)\")",
-      "Bash(curl -s -N -X POST http://localhost:8000/chat/stream -H 'Content-Type: application/json' -d '{\"session_id\":null,\"message\":\"What laptops do you offer?\"}' --max-time 15)"
+      "Bash(curl -s -N -X POST http://localhost:8000/chat/stream -H 'Content-Type: application/json' -d '{\"session_id\":null,\"message\":\"What laptops do you offer?\"}' --max-time 15)",
+      "Bash(curl -s -o /dev/null -w \"web: %{http_code}\\\\n\" http://localhost:5173)"
     ]
   }
 }
