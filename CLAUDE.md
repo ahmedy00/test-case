@@ -99,4 +99,4 @@ AI-powered B2B sales assistant. Users chat with an LLM that answers product/poli
 - [x] **Phase 4** — LLM chat with tool calling and SSE streaming
 - [x] **Phase 5** — Web client (chat UI, quote panel)
 - [x] **Phase 6** — Mobile client (Expo)
-- [ ] **Phase 7** — Tests, polish, documentation
+- [x] **Phase 7** — Tests, polish, documentation
